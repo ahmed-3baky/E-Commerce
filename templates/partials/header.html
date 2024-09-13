@@ -1,0 +1,28 @@
+<header>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="http://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/img/start.png" alt="Logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'home_page' %}">Home</a></li>
+                <li><a href="{% url 'product_list' %}">Products</a></li>
+                <li><a href="{% url 'product_recent' %}">Most recent</a></li>
+                <li><a href="{% url 'category_list' %}">Categories</a></li>
+                <li><a href="{% url 'about_bage' %}">About</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+
+                <li>
+                    {% if user.id %}
+                        <form method="post" action="{% url 'test_logout' %}" class="auth-form">
+                            {% csrf_token %}
+                            <button type="submit" class="auth-btn logout-btn">Logout</button>
+                        </form>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="auth-btn login-btn">Login</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

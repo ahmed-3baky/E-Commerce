@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Categories
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Categories</h1>
+    <div class="categories-grid">
+        {% for category in categories %}
+        <div class="category-card">
+            <a href="{% url 'category_products' category.id %}">
+                <div class="category-image">
+                    <img src="{{category.image.url}}" alt="{{ category.name }}">
+                </div>
+                <div class="category-info">
+                    <h2>{{ category.name }}</h2>
+                </div>
+            </a>
+        </div>
+        {% empty %}
+        <p>No categories available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

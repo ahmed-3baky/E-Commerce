@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Most Recent Products
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Most Recent Products</h1>
+    <div class="products-grid">
+        {% for product in recent_products %}
+        <div class="product-card">
+            <a href="{% url 'product_detail' product.id %}">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <h2>{{ product.name }}</h2>
+                <p>${{ product.price }}</p>
+            </a>
+        </div>
+        {% empty %}
+        <p>No recent products available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

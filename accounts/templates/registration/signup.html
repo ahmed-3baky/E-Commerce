@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Register</title>
+{% endblock title %}
+
+{% block content %}
+<div class="auth-container">
+    <h1 class="auth-title">Create Your Account</h1>
+    <form action="" method="post" class="auth-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="auth-btn2">Sign Up</button>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ product.name }}
+{% endblock %}
+
+{% block content %}
+<div class="container_category">
+    <div class="product-card-detail">
+        <div class="product-card-section product-image-section">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+
+        <div class="product-card-section product-info-section">
+            <h1>{{ product.name }}</h1>
+            <p class="product-price">${{ product.price }}</p>
+            <p class="product-description">{{ product.description }}</p>
+            <p class="product-category">
+                Category: 
+                <a href="{% url 'category' category_name=product.category.name %}">
+                    {{ product.category.name }}
+                </a>
+            </p>
+            {% if product.stock%}
+            <p class="product-stock">Stock: {{ product.stock }}</p>
+            <a href="{% url 'order_product' product_id=product.id %}">
+                <button class="order-btn">Order Now</button>
+            </a>
+            {% else %}
+            <button class="order-btn-out">Out Of Stock</button>
+            {% endif %}
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+

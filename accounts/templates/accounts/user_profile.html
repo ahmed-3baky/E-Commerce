@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    User Profile
+{% endblock title %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-header">
+        <img src="{{ user.image.url }}" alt="Profile Image" class="profile-image">
+        <h1 class="profile-name">{{ user.get_full_name }}</h1>
+        <p class="profile-email">Email: {{ user.email }}</p>
+        <p class="profile-phone">Phone: {{ user.phone }}</p>
+        <p class="profile-join-date">Join Date: {{ user.date_joined }}</p>
+
+    </div>
+
+    <div class="orders-section">
+        <h2 class="orders-title">Previous Orders</h2>
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    {% comment %} <th>Name</th>
+                    <th>Email</th> {% endcomment %}
+                    {% comment %} <th>Phone</th> {% endcomment %}
+                    <th>Address</th>
+                    <th>Ordered At</th>
+                    <th>Status</th>  
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td><a href="{% url 'product_detail' product_id=order.product.id %}">{{ order.product.name }}</a></td>
+                    {% comment %} <td class="order-name">{{ order.name }}</td>
+                    <td class="order-email">{{ order.email }}</td> {% endcomment %}
+                    {% comment %} <td class="order-phone">{{ order.phone }}</td> {% endcomment %}
+                    <td class="order-address">{{ order.address }}</td>
+                    <td class="order-ordered-at">{{ order.ordered_at }}</td>
+                    <td class="order-status">{{ order.get_status_display }}</td>  
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

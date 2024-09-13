@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Order Product</title>
+{% endblock title %}
+
+{% block content %}
+<div class="custom-order-container">
+    <h1 class="custom-order-title">Order {{ product.name }}</h1>
+
+    <form method="post" enctype="multipart/form-data" class="custom-order-form">
+        {% csrf_token %}
+        <div class="custom-form-field">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="custom-order-submit-btn">Place Order</button>
+    </form>
+</div>
+{% endblock content %}

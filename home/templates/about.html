@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About us page 
+{% endblock %}
+
+{% block body_class %}about_page_body{% endblock %}
+
+
+{% block content %}
+<section class="about-hero">
+    <div class="about-hero-content">
+        <h1>About Us</h1>
+        <p>Discover the story behind our passion for delivering top-quality products to your doorstep.</p>
+    </div>
+</section>
+
+
+<section class="company-story">
+    <div class="container">
+        <h2>Our Story</h2>
+        <p>Founded in 2024, our mission has always been to bring innovative, high-quality products to customers worldwide. What started as a small venture quickly grew into a global brand, thanks to our commitment to customer satisfaction and a relentless pursuit of excellence.</p>
+    </div>
+</section>
+
+
+
+<section class="our-values">
+    <div class="container">
+        <h2>Our Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <img src="https://cdn-icons-png.freepik.com/256/12110/12110134.png?semt=ais_hybrid" alt="Integrity Icon">
+                <h3>Integrity</h3>
+                <p>We believe in doing the right thing, always. Integrity is at the core of everything we do.</p>
+            </div>
+            <div class="value-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/4341/4341966.png" alt="Innovation Icon">
+                <h3>Innovation</h3>
+                <p>We're committed to pushing boundaries and staying at the forefront of the industry.</p>
+            </div>
+            <div class="value-card">
+                <img src="https://media.istockphoto.com/id/1017466322/vector/target-audience-customer-client-targeting-consumer-centricity-aim-people-sign.jpg?s=612x612&w=0&k=20&c=E5iUfNUeU0wYtJfY6fBOtUQPaNhcAccWFmeuobl15qE=" alt="Customer Icon">
+                <h3>Customer First</h3>
+                <p>Your satisfaction is our top priority. We're here to make your shopping experience exceptional.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="meet-the-team">
+    <div class="container">
+        <h2>Meet the Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="https://i.ibb.co/Fb9qCJq/my-pic.jpg" alt="Team Member 1">
+                <h3>Ahmed Abd Elbaki</h3>
+                <p>developer</p>
+            </div>
+            <div class="team-member">
+                <img src="https://i.ibb.co/9vKdTkm/sa.jpg" alt="Team Member 2">
+                <h3>Ahmed Hassanein</h3>
+                <p>developer</p>
+            </div>
+            <div class="team-member">
+                <img src="https://i.ibb.co/9vKdTkm/sa.jpg" alt="Team Member 3">
+                <h3>Belal</h3>
+                <p>developer</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="call-to-action">
+    <div class="cta-content">
+        <h2>Join Us on Our Journey</h2>
+        <p>We invite you to be part of our mission to bring innovation and quality to the world. Shop with us and experience the difference.</p>
+        <a href="{% url 'product_list' %}" class="cta-btn">Explore Our Products</a>
+    </div>
+</section>
+{% endblock %}
+
